@@ -146,4 +146,34 @@ export const applicationApi = {
   getMy: (params) => api.get("/my-applications", { params }),
 };
 
+export const eventApi = {
+  // Public
+  getAll: (params) => api.get("/events", { params }),
+  getById: (id) => api.get(`/events/${id}`),
+  // Restaurant
+  create: (data) => api.post("/events", data),
+  update: (id, data) => api.put(`/events/${id}`, data),
+  delete: (id) => api.delete(`/events/${id}`),
+  getMyEvents: (params) => api.get("/events/restaurant/mine", { params }),
+  getEventBookings: (eventId) => api.get(`/events/${eventId}/bookings`),
+  // Chef / Helper
+  book: (eventId, data) => api.post(`/events/${eventId}/book`, data),
+};
+
+export const eventBookingApi = {
+  // Chef / Helper
+  cancel: (id) => api.delete(`/event-bookings/${id}`),
+  getMyBookings: () => api.get("/event-bookings/my-bookings"),
+  // Restaurant
+  updateStatus: (id, data) => api.patch(`/event-bookings/${id}/status`, data),
+};
+
+export const publicApi = {
+  getChefs: (params) => api.get("/public/chefs", { params }),
+  getChefById: (id) => api.get(`/public/chefs/${id}`),
+  getHelpers: (params) => api.get("/public/helpers", { params }),
+  getHelperById: (id) => api.get(`/public/helpers/${id}`),
+  submitBooking: (data) => api.post("/public/bookings", data),
+};
+
 export default api;

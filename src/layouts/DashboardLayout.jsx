@@ -15,6 +15,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import LogoutIcon from "@mui/icons-material/Logout";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import EventIcon from "@mui/icons-material/Event";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Outlet, useNavigate, useLocation, Link as RouterLink } from "react-router-dom";
@@ -32,12 +34,16 @@ const getNavItems = (role) => {
     { label: "Edit Profile", icon: <SettingsIcon />, to: ROUTES.CHEF_EDIT_PROFILE },
     { label: "Applications", icon: <AssignmentIcon />, to: ROUTES.CHEF_APPLICATIONS },
     { label: "Availability", icon: <CalendarTodayIcon />, to: ROUTES.CHEF_AVAILABILITY },
+    { label: "Browse Events", icon: <EventIcon />, to: ROUTES.CHEF_EVENTS },
+    { label: "My Bookings", icon: <EventAvailableIcon />, to: ROUTES.CHEF_MY_BOOKINGS },
   ];
   if (role === "ROLE_HELPER") return [
     { label: "Dashboard", icon: <DashboardIcon />, to: ROUTES.HELPER_DASHBOARD },
     { label: "My Profile", icon: <PersonIcon />, to: ROUTES.HELPER_PROFILE },
     { label: "Edit Profile", icon: <SettingsIcon />, to: ROUTES.HELPER_EDIT_PROFILE },
     { label: "Applications", icon: <AssignmentIcon />, to: ROUTES.HELPER_APPLICATIONS },
+    { label: "Browse Events", icon: <EventIcon />, to: ROUTES.HELPER_EVENTS },
+    { label: "My Bookings", icon: <EventAvailableIcon />, to: ROUTES.HELPER_MY_BOOKINGS },
   ];
   if (role === "ROLE_RESTAURANT") return [
     { label: "Dashboard", icon: <DashboardIcon />, to: ROUTES.RESTAURANT_DASHBOARD },
@@ -47,6 +53,8 @@ const getNavItems = (role) => {
     { label: "Candidates", icon: <PeopleIcon />, to: ROUTES.RESTAURANT_CANDIDATES },
     { label: "Shortlisted", icon: <BookmarkIcon />, to: ROUTES.RESTAURANT_SHORTLISTED },
     { label: "Hired Staff", icon: <AssignmentIcon />, to: ROUTES.RESTAURANT_HIRED },
+    { label: "My Events", icon: <EventIcon />, to: ROUTES.RESTAURANT_MY_EVENTS },
+    { label: "Create Event", icon: <EventAvailableIcon />, to: ROUTES.RESTAURANT_CREATE_EVENT },
   ];
   if (role === "ROLE_ADMIN") return [
     { label: "Dashboard", icon: <DashboardIcon />, to: ROUTES.ADMIN_DASHBOARD },

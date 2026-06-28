@@ -45,6 +45,31 @@ export const ROUTES = {
   EVENT_BOOKING: "/event-booking",
   CHAT: "/chat",
   NOTIFICATIONS: "/notifications",
+
+  // Restaurant Events
+  RESTAURANT_MY_EVENTS: "/restaurant/events",
+  RESTAURANT_CREATE_EVENT: "/restaurant/events/new",
+  RESTAURANT_EVENT_DETAIL: "/restaurant/events/:id",
+  RESTAURANT_EDIT_EVENT: "/restaurant/events/:id/edit",
+
+  // Chef Events
+  CHEF_EVENTS: "/chef/events",
+  CHEF_EVENT_DETAIL: "/chef/events/:id",
+  CHEF_MY_BOOKINGS: "/chef/bookings",
+
+  // Helper Events
+  HELPER_EVENTS: "/helper/events",
+  HELPER_EVENT_DETAIL: "/helper/events/:id",
+  HELPER_MY_BOOKINGS: "/helper/bookings",
+
+  // Guest Booking (no login required)
+  PUBLIC_CHEFS: "/public/chefs",
+  PUBLIC_HELPERS: "/public/helpers",
+  PUBLIC_CHEF_DETAIL: "/public/chef/:id",
+  PUBLIC_HELPER_DETAIL: "/public/helper/:id",
+  PUBLIC_BOOK_CHEF: "/public/book-chef/:id",
+  PUBLIC_BOOK_HELPER: "/public/book-helper/:id",
+  PUBLIC_BOOKING_SUCCESS: "/public/booking-success",
 };
 
 export const getDashboardRoute = (role) => {

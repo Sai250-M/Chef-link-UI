@@ -49,6 +49,19 @@ import markNotificationsReadReducer from './slices/notification/markNotification
 
 import getMyApplicationsReducer from './slices/application/getMyApplications';
 
+import createEventReducer from './slices/event/createEvent';
+import getEventsReducer from './slices/event/getEvents';
+import getEventByIdReducer from './slices/event/getEventById';
+import updateEventReducer from './slices/event/updateEvent';
+import deleteEventReducer from './slices/event/deleteEvent';
+import getMyEventsReducer from './slices/event/getMyEvents';
+
+import bookEventReducer from './slices/eventBooking/bookEvent';
+import cancelBookingReducer from './slices/eventBooking/cancelBooking';
+import getMyEventBookingsReducer from './slices/eventBooking/getMyEventBookings';
+import getEventBookingsReducer from './slices/eventBooking/getEventBookings';
+import updateBookingStatusReducer from './slices/eventBooking/updateBookingStatus';
+
 const rootReducer = combineReducers({
   loginReducer,
   registerReducer,
@@ -98,6 +111,19 @@ const rootReducer = combineReducers({
   markNotificationsReadReducer,
 
   getMyApplicationsReducer,
+
+  createEventReducer,
+  getEventsReducer,
+  getEventByIdReducer,
+  updateEventReducer,
+  deleteEventReducer,
+  getMyEventsReducer,
+
+  bookEventReducer,
+  cancelBookingReducer,
+  getMyEventBookingsReducer,
+  getEventBookingsReducer,
+  updateBookingStatusReducer,
 });
 
 export default rootReducer;

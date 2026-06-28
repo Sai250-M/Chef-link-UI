@@ -114,3 +114,38 @@ export const MARK_NOTIFICATIONS_READ = 'notifications/read';
 // Applications
 export const GET_MY_APPLICATIONS = 'my-applications';
 
+// Events
+export const CREATE_EVENT = 'events';
+export const GET_EVENTS = 'events';
+export const GET_EVENT_BY_ID = 'events/:id';
+export const UPDATE_EVENT = 'events/:id';
+export const DELETE_EVENT = 'events/:id';
+export const GET_MY_EVENTS = 'events/restaurant/mine';
+export const GET_EVENT_BOOKINGS = 'events/:eventId/bookings';
+export const BOOK_EVENT = 'events/:eventId/book';
+
+// Event Bookings
+export const CANCEL_BOOKING = 'event-bookings/:id';
+export const GET_MY_EVENT_BOOKINGS = 'event-bookings/my-bookings';
+export const UPDATE_BOOKING_STATUS = 'event-bookings/:id/status';
+
+export const EVENT_BOOKING_STATUS_LABELS = {
+  PENDING: { label: "Pending", color: "warning" },
+  CONFIRMED: { label: "Confirmed", color: "success" },
+  CANCELLED: { label: "Cancelled", color: "error" },
+  ATTENDED: { label: "Attended", color: "info" },
+};
+
+export const EVENT_STATUS_LABELS = {
+  DRAFT: { label: "Draft", color: "default" },
+  OPEN: { label: "Open", color: "success" },
+  CLOSED: { label: "Closed", color: "warning" },
+  CANCELLED: { label: "Cancelled", color: "error" },
+};
+
+export const EVENT_TYPE_OPTIONS = [
+  "Fine Dining", "Wedding Reception", "Birthday Party", "Corporate Event",
+  "Private Dinner", "Anniversary Celebration", "Cocktail Party",
+  "Pop-up Dinner", "Baby Shower", "Holiday Party", "Other",
+];
+
