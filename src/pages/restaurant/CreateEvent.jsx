@@ -70,8 +70,14 @@ export const CreateEvent = () => {
     try {
       const payload = { ...data };
       if (!payload.banner_url) delete payload.banner_url;
-      await eventApi.create(payload);
-      navigate(ROUTES.RESTAURANT_MY_EVENTS);
+      const res = await eventApi.create(payload);
+      const created = res.data.data ?? res.data;
+      const newId = created?.id;
+      if (newId) {
+        navigate(ROUTES.RESTAURANT_EVENT_DETAIL.replace(":id", newId));
+      } else {
+        navigate(ROUTES.RESTAURANT_MY_EVENTS);
+      }
     } catch (err) {
       setError(err.response?.data?.message ?? "Failed to create event");
     } finally {

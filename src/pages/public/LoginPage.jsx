@@ -37,8 +37,8 @@ export const LoginPage = () => {
     setError("");
     setIsLoading(true);
     try {
-      await login(data);
-      navigate(from || "/", { replace: true });
+      const user = await login(data);
+      navigate(from || getDashboardRoute(user.role), { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again.");
     } finally {

@@ -65,12 +65,14 @@ export const AuthProvider = ({ children }) => {
     const res = await authApi.login(payload);
     const { user, accessToken, refreshToken } = res.data.data;
     persistLogin(user, accessToken, refreshToken);
+    return user;
   }, [persistLogin]);
 
   const register = useCallback(async (payload) => {
     const res = await authApi.register(payload);
     const { user, accessToken, refreshToken } = res.data.data;
     persistLogin(user, accessToken, refreshToken);
+    return user;
   }, [persistLogin]);
 
   const logout = useCallback(async () => {
